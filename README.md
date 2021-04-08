@@ -14,3 +14,6 @@ This application provides basic functionalities of the online store built using 
 * Checkout page
 
 ### Project status: ongoing
+![hotel_overview](static/github_product_details.png)
+![hotel_dashboard](static/github_basket.png)
+![hotel_hotel_price_input](static/github_filtering.png)
