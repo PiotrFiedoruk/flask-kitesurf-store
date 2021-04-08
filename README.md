@@ -13,6 +13,9 @@ This application provides basic functionalities of the online store built using 
 * Shopping cart using cookies
 * Checkout page
 
+### to run project: 
+run main.py file
+
 ### Project status: ongoing
 ![hotel_overview](static/github_product_details.png)
 ![hotel_dashboard](static/github_basket.png)
