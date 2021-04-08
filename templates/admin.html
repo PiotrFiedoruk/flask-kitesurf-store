@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+
+
+
+
+{% block zawartosc %}
+
+    <div class="container">
+        <p class="text-center"><h2>Shop administration</h2></p>
+    <div class="row">
+
+    <div class="col-6">
+        <ul>
+            <li><a href="admin/addproduct">Add product</a></li>
+            <li><a href="">Edit product </a></li>
+            <li><a href="">Delete product</a></li>
+        </ul>
+    </div>
+    <div class="col-6">
+        <ul>
+            <li><a href="">Edit Manuals</a></li>
+            <li><a href="">Edit  FAQ</a></li>
+            <li><a href="">Edit  Warranty</a></li>
+            <li><a href="">Edit  About</a></li>
+            <li><a href="">Edit  Careers</a></li>
+            <li><a href="">Edit  Awards</a></li>
+            <li><a href="">Edit  Contact us</a></li>
+            <li><a href="">Edit  Blog</a></li>
+            <li><a href="">Edit  Videos</a></li>
+        </ul>
+    </div>
+        </div>
+
+
+{#        Table#}
+        <div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">id</th>
+                  <th scope="col">name</th>
+                  <th scope="col">brand</th>
+                  <th scope="col">category</th>
+                  <th scope="col">model</th>
+                  <th scope="col">year</th>
+                  <th scope="col">price</th>
+                  <th scope="col">stock</th>
+                  <th scope="col">active</th>
+                  <th scope="col">delete</th>
+                  <th scope="col">edit</th>
+
+
+                </tr>
+              </thead>
+              <tbody>
+                          {% for product in products %}
+                <tr>
+                    <td>{{ product['id'] }}</td>
+                    <td>{{ product['name'] }}</td>
+                    <td>{{ product['brand'] }}</td>
+                    <td>{{ product['category'] }}</td>
+                    <td>{{ product['model'] }}</td>
+                    <td>{{ product['year'] }}</td>
+                    <td>{{ product['price'] }}</td>
+                    <td>{{ product['stock'] }}</td>
+                    <td>{{ product['active'] }}</td>
+                    <td><a href="/delete_product/{{ product['id'] }}">delete</a></td>
+                    <td><a href="/edit_product/{{ product['id'] }}">edit</a></td>
+                </tr>
+                          {% endfor %}
+              </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+{% endblock zawartosc %}

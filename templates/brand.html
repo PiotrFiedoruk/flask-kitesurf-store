@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block zawartosc %}
+
+    <div class="col-11 offset-1">
+            <h2> {{ cur_brand }} </h2>
+        <div class="row">
+            <div class="col-2 img-thumbnail" style="margin: 5px; padding:30px">
+                <form method="POST">
+                    <u>Max price:</u><br>
+                    <input type="number" name="price" class="w-75">
+                    <hr>
+                    <u>Category:</u><br>
+                    {% for product in f_category %}
+                    <input class="form-check-input" type="checkbox" value="{{ product }}" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">   {{ product }}</label><br>
+                    {% endfor %}
+                    <hr>
+                    <u>Year:</u><br>
+                    {% for product in f_year %}
+                    <input class="form-check-input" type="checkbox" value="{{ product }}" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">   {{ product }}</label><br>
+                    {% endfor %}
+                    <hr>
+                    <u>Model:</u><br>
+                    {% for product in f_model %}
+                    <input class="form-check-input" type="checkbox" value="{{ product }}" id="defaultCheck3">
+                    <label class="form-check-label" for="defaultCheck3">   {{ product }}</label><br>
+                    {% endfor %}
+                    <hr>
+                    <input class="btn btn-warning" type="submit" value="Filter">
+                </form>
+            </div>
+            <div class="col-9">
+            <div class="row">
+
+            {%  for product in products %}
+            <div class="col-lg-4 col-md-6 col-sm-6" style = "padding: 5px;">
+			<div class=" img-thumbnail bg-light" style="padding: 10px">
+				<img src="http://placehold.jp/24/adb5bd/1687a7/300x200.png" width="100%">
+				<h5>{{ product['name'] }}</h5>
+				<h6>{{ product['price'] }}</h6>
+				<a href="/product/{{ product['id'] }}" class="btn btn-info float-end">See more</a>
+			</div></div>
+            {%  endfor %}
+                </div>
+                </div>
+                        </div>
+    </div>
+{% endblock %}
+

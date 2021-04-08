@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block zawartosc %}
+<div class="row">
+    <div class="col-6 offset-3">
+        <h2>Your order:</h2>
+        <div class="row">
+        <div class="col-4">
+            <img class="d-block w-100" src="http://placehold.jp/24/adb5bd/1687a7/300x200.png">
+        </div>
+        <div class="col-6">
+        <form class="form group" method="POST" name="basket" action="your-order-is-confirmed">
+            <table>
+            <tbody>
+                <tr>
+                    <td>
+                        Item:
+                    </td>
+                    <td class="text-right">
+                        {{ b_product['name'] }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Price:
+                    </td>
+                    <td class="text-right">
+                        {{ b_product['price'] }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Model:
+                    </td>
+                    <td class="text-right">
+                        {{ b_product['model'] }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Year:
+                    </td>
+                    <td class="text-right">
+                        {{ b_product['year'] }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Quantity:
+                    </td>
+                    <td class="text-right">
+                        <input type="number" value="1" class="w-50">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    </td>
+                </tr>
+            </tbody>
+           </table>
+            <p class="text-right w-75"><h4>Total amount: {{ b_product['price'] }}</h4></p>
+            <input type="submit" class="btn btn-warning w-75" value="buy now">
+        </form>
+
+    </div>
+            </div>
+    <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+    </div>
+</div>
+{% endblock %}

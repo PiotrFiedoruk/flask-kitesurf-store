@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block zawartosc %}
+
+
+    <div class="col-10 offset-1">
+        <h2> Add product </h2>
+        <form method="POST" >
+            <div class="form-group">
+                <div class="row">
+                <div class = "col-4">
+                Name: <input type="text" class="form-control" name="name">
+
+                    Brand: <input name="brand" class="form-control" list="brandlist">
+                    <datalist id="brandlist">
+                        {%  for brand in brand %}
+                        <option value="{{ brand }}">{{ brand }}</option>
+                        {%  endfor %}
+                    </datalist>
+
+
+
+
+                    Category: <input name="category" class="form-control" list="categorylist">
+                    <datalist id="categorylist">
+                        {%  for category in category %}
+                        <option value="{{ category }}">{{ category }}</option>
+                        {%  endfor %}
+                    </datalist>
+
+
+                Model: <input type="text" class="form-control" name="model">
+
+                    Year: <input name="year" class="form-control" list="yearlist">
+                    <datalist id="yearlist">
+                        {%  for year in year %}
+                        <option value="{{ year }}">{{ year }}</option>
+                        {%  endfor %}
+                    </datalist>
+                Size: <input type="text" class="form-control" name="size">
+                Active: <select class="form-control" name = "active">
+                    <option value="True">Active</option>
+                    <option value="False">Not active</option>
+                </select>
+                </div>
+                <div class="col-4">
+                Price: <input type="number" class="form-control" name="price">
+                Width: <input type="number" class="form-control" name="width">
+                Length: <input type="number" class="form-control" name="length">
+                Weight: <input type="number" class="form-control" name="weight">
+                Movie link: <input type="number" class="form-control" name="movie_link">
+                Techs: <input type="text" class="form-control" name="technologies">
+                Stock: <input type="number" class="form-control" name="stock">
+            </div>
+                </div>
+            <div class="col-8">
+            Description:
+            <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+            <script>tinymce.init({ selector:'textarea' });</script>
+            <textarea name="description">Product description here</textarea>
+            <p><input type="submit" value="submit" class="btn btn-info"></p>
+            </div>
+
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
